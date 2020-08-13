@@ -28,10 +28,10 @@ jobs:
       with: 
         node-version: '12'
    
-   # Step to Install Surge
-   - name: Installing Surge  
-     run: npm install --global surge
+    # Step to Install Surge
+    - name: Installing Surge  
+      run: npm install --global surge
      
-   # Deploy App to Surge
-   - name: Deploying Project to Surge
-     run: surge ./ shalkon_jsprojects.surge.sh --token ${{ secrets.SURGE_TOKEN }}     
+    # Deploy App to Surge
+    - name: Deploying Project to Surge
+      run: surge ./ shalkon_jsprojects.surge.sh --token ${{ secrets.SURGE_TOKEN }}     
