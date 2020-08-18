@@ -2,7 +2,7 @@ const form = document.getElementById('form')
 const username = document.getElementById('username')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
-const password2 = document.getElementById('confirm-Password')
+const password2 = document.getElementById('password2')
  
 // ALL Functions
 // Function to show error
@@ -25,27 +25,34 @@ function isValidEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-// Function to check if required fields have data
-function checkRequired(inputArray) {
-inputArray.forEach(function(input) {
-    if ( input.value === '' ) {
-        console.log(input.id);
-        showError(input,`${getFieldId(input)} is required`);
-    } else {
-        showSuccess(input);
-    }
-  });
-}
-
-// Function to get the id of the input field with proper case
-function getFieldId(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
-
 // This is an event listener for the form on submit
 form.addEventListener('submit',function(e) {
     e.preventDefault();
-  
-    checkRequired([username,email,password,password2]);
+    
+    if ( username.value === '' ) {
+      showError(username,'Username is required')
+    } else {
+      showSuccess(username);
+    }
 
+    if ( email.value === '' ) {
+      showError(email,'Email is required')
+    } else if (!isValidEmail(email.value)) {
+      showError(email,'Email is invalid')
+
+    } else {
+      showSuccess(email);
+    }
+
+    if ( password.value === '' ) {
+      showError(password,'Password is required')
+    } else {
+      showSuccess(password);
+    }
+
+    if ( password2.value === '' ) {
+      showError(password2,' Confirm Password is required')
+    } else {
+      showSuccess(password2);
+    }
 })
