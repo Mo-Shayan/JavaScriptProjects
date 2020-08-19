@@ -76,4 +76,3 @@ form.addEventListener('submit',function(e) {
 
 })
  
-alert('Shayan Sohail')
