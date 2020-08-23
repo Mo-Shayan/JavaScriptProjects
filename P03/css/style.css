@@ -18,6 +18,7 @@ body {
 
 h1 {
     color: rgb(255, 255, 255);
+    font-size: 55px;
 }
 
 .screen {
@@ -36,7 +37,7 @@ h1 {
     align-items: center;
     justify-content: center;
     width: 60%;
-    padding: 15px;
+    padding: 6px;
     border-radius: 22px;
     border: 3px solid darkgrey;
 }
@@ -68,6 +69,8 @@ span.timestamp {
     font-weight: bold;
     margin-left: 10px;
 }
+
+
 
 @media(max-width: 800px) {
    .screen, .controls {
